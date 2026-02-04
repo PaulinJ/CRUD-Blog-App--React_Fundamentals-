@@ -1,17 +1,26 @@
+import { useState } from "react";
+   
 const Home = () => {
+    const [name, setName] = useState("Paul");
+
     const handleClick = () => {
-        console.log('hello there!');
+        if(name === "Paul"){
+            setName("Junior");
+        }
+        else {
+            setName("Paul");
+        }
+        
     }
-    //function with param
-    const handleClickAgain = (name) => {
-        console.log("hello " + name);
-    }
+   
+
     return ( 
         <div className="home">
             <h2>Home Page</h2>
+            <p>{name}</p>
             <button onClick={handleClick}>Click here</button>
-            {/*how to reference a parameterised function: use an anonymous function and pass it in*/}
-            <button onClick={() => {handleClickAgain("Junior")}}>Click here Again</button>
+
+
 
         </div>
      );
