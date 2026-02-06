@@ -17,14 +17,11 @@ const Home = () => {
 
   useEffect(() =>{
     console.log('use effect hook');
-    console.log(blogs);
-  }, [name]); 
+  }, []); 
    
     return ( 
         <div className="home">
           <BlogList blogs={blogs} title="All blogs!" handleDelete={handleDelete}/>
-          <button onClick={() => setName('bob')}>change name</button>
-          <p>{name}</p>
 
         </div>
      );
