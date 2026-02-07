@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const useFetch = (url) => {
 
-    const abortCont = new AbortController();    
+     
 
     const [data, setData] = useState(null);
     const [isPending, setIsPending] = useState(true);
@@ -11,6 +11,8 @@ const useFetch = (url) => {
 
 
       useEffect(() =>{
+        const abortCont = new AbortController();
+
         setTimeout(() => {
             fetch(url, { signal: abortCont.signal })
             .then(res => {
